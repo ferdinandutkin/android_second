@@ -19,8 +19,6 @@ class TotalModeCalculatorFragment : Fragment() {
     private var _binding: FragmentTotalModeCalculatorBinding? = null
     private val viewModel: CalcViewModel by activityViewModels()
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -45,9 +43,6 @@ class TotalModeCalculatorFragment : Fragment() {
             transaction.commit()
 
         }
-//        binding.buttonSecond.setOnClickListener {
-//            findNavController().navigate(R.id.action_SecondFragment_to_FirstFragment)
-//        }
     }
 
     override fun onDestroyView() {

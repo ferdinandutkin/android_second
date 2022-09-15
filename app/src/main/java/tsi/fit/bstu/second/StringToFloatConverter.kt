@@ -28,14 +28,5 @@ object StringToFloatConverter {
         return numberFormat.format(value)
     }
 
-
-    @JvmStatic
-    fun floatToStringBeautified(value: Float): String {
-        val current: Locale = Locale.getDefault()
-        val numberFormat = DecimalFormat.getNumberInstance(current)
-        numberFormat.maximumFractionDigits = 1
-        numberFormat.minimumFractionDigits = 1
-        return numberFormat.format(value)
-    }
 }
 

@@ -46,9 +46,8 @@
                 <androidx.fragment.app.FragmentContainerView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:name="tsi.fit.bstu.second.TotalModeCalculatorFragment"
+                    android:name="tsi.fit.bstu.second.AverageModeCalculatorFragment"
                     android:id="@+id/modeFragmentContainer"/>
-
 
             </LinearLayout>
 

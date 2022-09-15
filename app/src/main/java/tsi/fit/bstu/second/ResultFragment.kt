@@ -52,8 +52,10 @@ class ResultFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val mode = viewModel.selectedMode.get()
-        binding.averageModeGroup.visibility = if (mode == Mode.Average) View.VISIBLE else View.GONE
-        binding.totalModeGroup.visibility = if (mode == Mode.Total) View.VISIBLE else View.GONE
+        binding.averageModeGroup?.visibility = if (mode == Mode.Average) View.VISIBLE else View.GONE
+        binding.totalModeGroup?.visibility = if (mode == Mode.Total) View.VISIBLE else View.GONE
+
+        binding.tableLayout?.removeViewAt(if (mode == Mode.Total) 1 else 2)
 
         binding.buttonGoBack.setOnClickListener {
           goBack()
