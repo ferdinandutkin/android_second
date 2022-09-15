@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context=".TotalModeCalculatorFragment">
+    <data>
+        <import type="tsi.fit.bstu.second.StringToFloatConverter"/>
+        <variable
+            name="viewModel"
+            type="tsi.fit.bstu.second.CalcViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="192dp"
+        android:layout_height="400dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:labelFor="@+id/editTextFuel"
+            android:text="Средний расход топлива на 100 км, л" />
+
+        <EditText
+            android:id="@+id/editTextFuel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:ems="10"
+            android:text="@={StringToFloatConverter.floatToString(viewModel.averageFuel)}"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:labelFor="@+id/editTextDistance"
+            android:text="Пройденное расстояние, км" />
+
+        <EditText
+            android:id="@+id/editTextDistance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:text="@={StringToFloatConverter.floatToString(viewModel.distance)}"
+            android:ems="10"
+            android:inputType="numberDecimal" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:labelFor="@+id/editTextFuelCost"
+            android:text="Стоимость топлива, $" />
+
+        <EditText
+            android:id="@+id/editTextFuelCost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:ems="10"
+            android:text="@={StringToFloatConverter.floatToString(viewModel.fuelCost)}"
+            android:inputType="numberDecimal" />
+
+        <Button
+            android:id="@+id/buttonCalculate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Рассчитать" />
+
+    </LinearLayout>
+
+
+</layout>
